@@ -3192,7 +3192,7 @@ class _TimePickerDefaultsM2 extends _TimePickerDefaults {
   @override
   Color get dayPeriodTextColor {
     return  MaterialStateColor.resolveWith((Set<MaterialState> states) {
-      return states.contains(MaterialState.selected) ? _colors.primary : _colors.onSurface.withOpacity(0.60);
+      return states.contains(MaterialState.selected) ? _colors.primary.withOpacity(1) : _colors.onSurface.withOpacity(0.60);
     });
   }
 
@@ -3208,7 +3208,7 @@ class _TimePickerDefaultsM2 extends _TimePickerDefaults {
 
   @override
   Color get dialHandColor {
-    return _colors.primary;
+    return _colors.primary.withOpacity(1);
   }
 
   @override
@@ -3235,9 +3235,9 @@ class _TimePickerDefaultsM2 extends _TimePickerDefaults {
   Color get dialTextColor {
     return MaterialStateColor.resolveWith((Set<MaterialState> states) {
       if (states.contains(MaterialState.selected)) {
-        return _colors.surface;
+        return _colors.surface.withOpacity(1);
       }
-      return _colors.onSurface;
+      return _colors.onSurface.withOpacity(1);
     });
   }
 
@@ -3298,7 +3298,7 @@ class _TimePickerDefaultsM2 extends _TimePickerDefaults {
   @override
   Color get hourMinuteTextColor {
     return MaterialStateColor.resolveWith((Set<MaterialState> states) {
-      return states.contains(MaterialState.selected) ? _colors.primary : _colors.onSurface;
+      return states.contains(MaterialState.selected) ? _colors.primary.withOpacity(1) : _colors.onSurface.withOpacity(1);
     });
   }
 
@@ -3326,13 +3326,13 @@ class _TimePickerDefaultsM2 extends _TimePickerDefaults {
         borderSide: BorderSide(color: Colors.transparent),
       ),
       errorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: _colors.error, width: 2),
+        borderSide: BorderSide(color: _colors.error.withOpacity(1), width: 2),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: _colors.primary, width: 2),
+        borderSide: BorderSide(color: _colors.primary.withOpacity(1), width: 2),
       ),
       focusedErrorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: _colors.error, width: 2),
+        borderSide: BorderSide(color: _colors.error.withOpacity(1), width: 2),
       ),
       hintStyle: hourMinuteTextStyle.copyWith(color: _colors.onSurface.withOpacity(0.36)),
       // Prevent the error text from appearing.
@@ -3371,7 +3371,7 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
 
   @override
   Color get backgroundColor {
-    return _colors.surface;
+    return _colors.surface.withOpacity(1);
   }
 
   @override
@@ -3386,14 +3386,14 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
 
   @override
   BorderSide get dayPeriodBorderSide {
-    return BorderSide(color: _colors.outline);
+    return BorderSide(color: _colors.outline.withOpacity(1));
   }
 
   @override
   Color get dayPeriodColor {
     return MaterialStateColor.resolveWith((Set<MaterialState> states) {
       if (states.contains(MaterialState.selected)) {
-        return _colors.tertiaryContainer;
+        return _colors.tertiaryContainer.withOpacity(1);
       }
       // The unselected day period should match the overall picker dialog color.
       // Making it transparent enables that without being redundant and allows
@@ -3429,42 +3429,42 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
     return MaterialStateColor.resolveWith((Set<MaterialState> states) {
       if (states.contains(MaterialState.selected)) {
         if (states.contains(MaterialState.focused)) {
-          return _colors.onTertiaryContainer;
+          return _colors.onTertiaryContainer.withOpacity(1);
         }
         if (states.contains(MaterialState.hovered)) {
-          return _colors.onTertiaryContainer;
+          return _colors.onTertiaryContainer.withOpacity(1);
         }
         if (states.contains(MaterialState.pressed)) {
-          return _colors.onTertiaryContainer;
+          return _colors.onTertiaryContainer.withOpacity(1);
         }
-        return _colors.onTertiaryContainer;
+        return _colors.onTertiaryContainer.withOpacity(1);
       }
       if (states.contains(MaterialState.focused)) {
-        return _colors.onSurfaceVariant;
+        return _colors.onSurfaceVariant.withOpacity(1);
       }
       if (states.contains(MaterialState.hovered)) {
-        return _colors.onSurfaceVariant;
+        return _colors.onSurfaceVariant.withOpacity(1);
       }
       if (states.contains(MaterialState.pressed)) {
-        return _colors.onSurfaceVariant;
+        return _colors.onSurfaceVariant.withOpacity(1);
       }
-      return _colors.onSurfaceVariant;
+      return _colors.onSurfaceVariant.withOpacity(1);
     });
   }
 
   @override
   TextStyle get dayPeriodTextStyle {
-    return _textTheme.titleMedium!.copyWith(color: dayPeriodTextColor);
+    return _textTheme.titleMedium!.copyWith(color: dayPeriodTextColor.withOpacity(1));
   }
 
   @override
   Color get dialBackgroundColor {
-    return _colors.surfaceVariant;
+    return _colors.surfaceVariant.withOpacity(1);
   }
 
   @override
   Color get dialHandColor {
-    return _colors.primary;
+    return _colors.primary.withOpacity(1);
   }
 
   @override
@@ -3491,9 +3491,9 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
   Color get dialTextColor {
     return MaterialStateColor.resolveWith((Set<MaterialState> states) {
       if (states.contains(MaterialState.selected)) {
-        return _colors.onPrimary;
+        return _colors.onPrimary.withOpacity(1);
       }
-      return _colors.onSurface;
+      return _colors.onSurface.withOpacity(1);
     });
   }
 
@@ -3509,14 +3509,14 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
 
   @override
   Color get entryModeIconColor {
-    return _colors.onSurface;
+    return _colors.onSurface.withOpacity(1);
   }
 
   @override
   TextStyle get helpTextStyle {
     return MaterialStateTextStyle.resolveWith((Set<MaterialState> states) {
       final TextStyle textStyle = _textTheme.labelMedium!;
-      return textStyle.copyWith(color: _colors.onSurfaceVariant);
+      return textStyle.copyWith(color: _colors.onSurfaceVariant.withOpacity(1));
     });
   }
 
@@ -3529,9 +3529,9 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
   Color get hourMinuteColor {
     return MaterialStateColor.resolveWith((Set<MaterialState> states) {
       if (states.contains(MaterialState.selected)) {
-        Color overlayColor = _colors.primaryContainer;
+        Color overlayColor = _colors.primaryContainer.withOpacity(1);
         if (states.contains(MaterialState.pressed)) {
-          overlayColor = _colors.onPrimaryContainer;
+          overlayColor = _colors.onPrimaryContainer.withOpacity(1);
         } else if (states.contains(MaterialState.hovered)) {
           const double hoverOpacity = 0.08;
           overlayColor = _colors.onPrimaryContainer.withOpacity(hoverOpacity);
@@ -3539,11 +3539,11 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
           const double focusOpacity = 0.12;
           overlayColor = _colors.onPrimaryContainer.withOpacity(focusOpacity);
         }
-        return Color.alphaBlend(overlayColor, _colors.primaryContainer);
+        return Color.alphaBlend(overlayColor, _colors.primaryContainer.withOpacity(1));
       } else {
-        Color overlayColor = _colors.surfaceVariant;
+        Color overlayColor = _colors.surfaceVariant.withOpacity(1);
         if (states.contains(MaterialState.pressed)) {
-          overlayColor = _colors.onSurface;
+          overlayColor = _colors.onSurface.withOpacity(1);
         } else if (states.contains(MaterialState.hovered)) {
           const double hoverOpacity = 0.08;
           overlayColor = _colors.onSurface.withOpacity(hoverOpacity);
@@ -3551,7 +3551,7 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
           const double focusOpacity = 0.12;
           overlayColor = _colors.onSurface.withOpacity(focusOpacity);
         }
-        return Color.alphaBlend(overlayColor, _colors.surfaceVariant);
+        return Color.alphaBlend(overlayColor, _colors.surfaceVariant.withOpacity(1));
       }
     });
   }
@@ -3596,27 +3596,27 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
     return MaterialStateProperty.resolveWith((Set<MaterialState> states) {
       if (states.contains(MaterialState.selected)) {
         if (states.contains(MaterialState.pressed)) {
-          return _colors.onPrimaryContainer;
+          return _colors.onPrimaryContainer.withOpacity(1);
         }
         if (states.contains(MaterialState.hovered)) {
-          return _colors.onPrimaryContainer;
+          return _colors.onPrimaryContainer.withOpacity(1);
         }
         if (states.contains(MaterialState.focused)) {
-          return _colors.onPrimaryContainer;
+          return _colors.onPrimaryContainer.withOpacity(1);
         }
-        return _colors.onPrimaryContainer;
+        return _colors.onPrimaryContainer.withOpacity(1);
       } else {
         // unselected
         if (states.contains(MaterialState.pressed)) {
-          return _colors.onSurface;
+          return _colors.onSurface.withOpacity(1);
         }
         if (states.contains(MaterialState.hovered)) {
-          return _colors.onSurface;
+          return _colors.onSurface.withOpacity(1);
         }
         if (states.contains(MaterialState.focused)) {
-          return _colors.onSurface;
+          return _colors.onSurface.withOpacity(1);
         }
-        return _colors.onSurface;
+        return _colors.onSurface.withOpacity(1);
       }
     });
   }
@@ -3646,22 +3646,22 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
       // This should be derived from a token, but there isn't one for 'time-input'.
       fillColor: hourMinuteColor,
       // This should be derived from a token, but there isn't one for 'time-input'.
-      focusColor: _colors.primaryContainer,
+      focusColor: _colors.primaryContainer.withOpacity(1),
       enabledBorder: OutlineInputBorder(
         borderRadius: selectorRadius,
         borderSide: const BorderSide(color: Colors.transparent),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: selectorRadius,
-        borderSide: BorderSide(color: _colors.error, width: 2),
+        borderSide: BorderSide(color: _colors.error.withOpacity(1), width: 2),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: selectorRadius,
-        borderSide: BorderSide(color: _colors.primary, width: 2),
+        borderSide: BorderSide(color: _colors.primary.withOpacity(1), width: 2),
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderRadius: selectorRadius,
-        borderSide: BorderSide(color: _colors.error, width: 2),
+        borderSide: BorderSide(color: _colors.error.withOpacity(1), width: 2),
       ),
       hintStyle: hourMinuteTextStyle.copyWith(color: _colors.onSurface.withOpacity(0.36)),
       // Prevent the error text from appearing.
